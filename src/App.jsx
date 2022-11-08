@@ -1,5 +1,6 @@
 import './App.css';
 import { Component } from 'react';
+import Form from './form';
 
 class App extends Component {
   state = {
@@ -9,7 +10,12 @@ class App extends Component {
 
   render() {
     return (
-      <div></div>
+      <div className='form-container'>
+        <h1>Control components and working with forms</h1>
+        <Form>
+
+        </Form>
+      </div>
     );
   }
 }
