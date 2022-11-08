@@ -1,0 +1,28 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    display: flex;
+    width: 50vh;
+    justify-content: space-evenly;
+    margin: 0 0 15px;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+}
+
+select {
+    width: 20vh;
+}
+
+button {
+    height: 5vh;
+    width: 10vw;
+    margin: 20px 0 0;
+    text-align: center;
+    margin: 0 0 0 10vw;
+}

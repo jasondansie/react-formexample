@@ -1,3 +1,8 @@
 .form-container {
-  background-color: cornflowerblue;
+  height: 50vh;
+  background-color: lightgray;
+}
+
+h1 {
+  margin: 0 0 20px;
 }
