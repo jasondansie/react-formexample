@@ -3,14 +3,25 @@ import './Popup.css';
 const Popup = (props) => {
     return (
         <div className="modal" id="modal">
-            <h2>Verify</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At saepe illo magni, in dolor ratione explicabo amet porro reprehenderit ea laboriosam deleniti praesentium nemo ut laborum error voluptatum blanditiis iure expedita sapiente quasi eum. Nesciunt saepe iure fugiat aut excepturi inventore nisi sed totam quae quia, repellendus debitis! Non, nesciunt.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. At saepe illo magni, in dolor ratione explicabo amet porro reprehenderit ea laboriosam deleniti praesentium nemo ut laborum error voluptatum blanditiis iure expedita sapiente quasi eum. Nesciunt saepe iure fugiat aut excepturi inventore nisi sed totam quae quia, repellendus debitis! Non, nesciunt.
-            </p>
-            <button className="btnClose" id="btnClose">X</button>
+            <h2>Verify your choice</h2>
+            <div className='verify-container'>
+                <div className='displayname'>
+                    <p>Firstname: {props.firstname}</p>
+                    <p>Lastname: {props.lastname}</p>
+                </div>
+                <div className='displayname'>
+                    <p>Phone Number: {props.phonenumber}</p>
+                    <p>Role: {props.roles}</p>
+                </div>
+                <div className='displayname'>
+                    <p>Message: {props.message}</p>
+                </div>
+            </div>
+            <div className='button-container'>
+                <button className="send" id="send">Send</button>
+                <button className="cancel" id="cancel">Cancel</button>
+            </div>
+
 
         </div>
     )

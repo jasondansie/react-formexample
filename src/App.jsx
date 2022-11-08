@@ -1,8 +1,8 @@
 import './App.css';
 import { Component } from 'react';
+import Popup from './Popup';
 import Form from './Form';
 import View from './View';
-import Popup from './Popup';
 import Footer from './Footer';
 
 class App extends Component {
@@ -40,6 +40,11 @@ class App extends Component {
         </section>
         <section className='popup-container'>
           <Popup
+            firstname={this.state.firstname}
+            lastname={this.state.lastname}
+            phonenumber={this.state.phonenumber}
+            message={this.state.message}
+            roles={this.state.roles}
           />
         </section>
         <Footer />
