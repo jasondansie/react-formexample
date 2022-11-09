@@ -2,7 +2,7 @@ import './Form.css';
 
 const Form = (props) => {
     return (
-        <div className='form'>
+        <form className='form' onSubmit={props.submit}>
             <div className='form-group'>
                 <label htmlFor="firstName" name="firstname">First name</label>
                 <input type="text" name='firstname' value={props.firstname} onChange={props.changeHandler} />
@@ -28,7 +28,7 @@ const Form = (props) => {
                 </select>
             </div>
             <button className='submit'>Send</button>
-        </div>
+        </form>
     )
 }
 

@@ -12,11 +12,18 @@ class App extends Component {
     phonenumber: "",
     message: "",
     roles: "",
+    showPopup: false
   };
 
   changeHandler = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
+    });
+  };
+  submitHandler = (event) => {
+    event.preventDefault();
+    this.setState({
+      showPopup: true
     });
   };
 
@@ -27,6 +34,7 @@ class App extends Component {
           <h1>Control components and working with forms</h1>
           <Form
             changeHandler={this.changeHandler}
+            submit={this.submitHandler}
           />
         </div>
         <section className='view-container'>
@@ -39,13 +47,13 @@ class App extends Component {
           />
         </section>
         <section className='popup-container'>
-          <Popup
+          {this.state.showPopup && <Popup
             firstname={this.state.firstname}
             lastname={this.state.lastname}
             phonenumber={this.state.phonenumber}
             message={this.state.message}
             roles={this.state.roles}
-          />
+          />}
         </section>
         <Footer />
       </main>
