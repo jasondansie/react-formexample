@@ -18,8 +18,8 @@ const Popup = (props) => {
                 </div>
             </div>
             <div className='button-container'>
-                <button className="send" id="send">Send</button>
-                <button className="cancel" id="cancel">Cancel</button>
+                <button className='closePopup'name="closePopup" onClick={props.closePopupHandler}>Send</button>
+                <button className="cancel" onClick={props.closePopupHandler}>Cancel</button>
             </div>
 
 

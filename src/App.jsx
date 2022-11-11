@@ -11,7 +11,7 @@ class App extends Component {
     lastname: "",
     phonenumber: "",
     message: "",
-    roles: "",
+    roles: "Teacher",
     showPopup: false
   };
 
@@ -20,11 +20,20 @@ class App extends Component {
       [event.target.name]: event.target.value,
     });
   };
+
   submitHandler = (event) => {
     event.preventDefault();
     this.setState({
       showPopup: true
     });
+  };
+
+  closePopupHandler = (event) => {
+    event.preventDefault();
+    this.setState({
+      showPopup: false
+    });
+    console.log("cancle");
   };
 
   render() {
@@ -53,6 +62,8 @@ class App extends Component {
             phonenumber={this.state.phonenumber}
             message={this.state.message}
             roles={this.state.roles}
+            closePopup={this.closePopupHandler}
+            cancel={this.closePopupHandler}
           />}
         </section>
         <Footer />
