@@ -1,0 +1,25 @@
+{
+    "notes": [
+        {
+            "id": 1,
+            "firstname": "John",
+            "lastname": "Doe",
+            "phone": "097563423",
+            "message": "Hello jonh"
+        },
+        {
+            "id": 2,
+            "firstname": "Jane",
+            "lastname": "Doe",
+            "phone": "097563423",
+            "message": "Hello Jane Doe"
+        },
+        {
+            "id": 3,
+            "firstname": "Bob",
+            "lastname": "Johnson",
+            "phone": "097563423",
+            "message": "It's a great day."
+        }
+    ]
+}
