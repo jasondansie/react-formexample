@@ -5,6 +5,7 @@
             "firstname": "John",
             "lastname": "Doe",
             "phone": "097563423",
+            "role": "Father",
             "message": "Hello jonh"
         },
         {
@@ -12,6 +13,7 @@
             "firstname": "Jane",
             "lastname": "Doe",
             "phone": "097563423",
+            "role": "Mother",
             "message": "Hello Jane Doe"
         },
         {
@@ -19,7 +21,16 @@
             "firstname": "Bob",
             "lastname": "Johnson",
             "phone": "097563423",
+            "role": "Neighbor",
             "message": "It's a great day."
+        },
+        {
+            "id": 4,
+            "firstname": "Jill",
+            "lastname": "Johnson",
+            "phone": "097563423",
+            "role": "teacher",
+            "message": "Jill on a hill."
         }
     ]
 }

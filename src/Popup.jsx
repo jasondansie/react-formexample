@@ -1,25 +1,25 @@
 import './Popup.css';
 
-const Popup = (props) => {
+const Popup = ({ firstname, lastname, phonenumber, message, role, closePopupHandler }) => {
     return (
         <div className="modal" id="modal">
             <h2>Verify your choice</h2>
             <div className='verify-container'>
                 <div className='displayname'>
-                    <p>Firstname: {props.firstname}</p>
-                    <p>Lastname: {props.lastname}</p>
+                    <p>Firstname: {firstname}</p>
+                    <p>Lastname: {lastname}</p>
                 </div>
                 <div className='displayname'>
-                    <p>Phone Number: {props.phonenumber}</p>
-                    <p>Role: {props.roles}</p>
+                    <p>Phone Number: {phonenumber}</p>
+                    <p>Role: {role}</p>
                 </div>
                 <div className='displayname'>
-                    <p>Message: {props.message}</p>
+                    <p>Message: {message}</p>
                 </div>
             </div>
             <div className='button-container'>
-                <button className='closePopup'name="closePopup" onClick={props.closePopupHandler}>Send</button>
-                <button className="cancel" onClick={props.closePopupHandler}>Cancel</button>
+                <button className='closePopup' name="closePopup" onClick={closePopupHandler}>Send</button>
+                <button className="cancel" onClick={closePopupHandler}>Cancel</button>
             </div>
 
 
