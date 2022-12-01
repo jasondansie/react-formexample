@@ -1,60 +1,81 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Popup from './Popup';
 import Form from './Form';
 import View from './View';
 import Footer from './Footer';
 import Notes from './Notes';
+import axios from 'axios';
 
 const App = () => {
+  const [notes, setNote] = useState({
+    firstname: '',
+    lastname: '',
+    phonenumber: '',
+    role: '',
+    message: ''
+  })
 
-  const [firstname, setFirstname] = useState();
-  const [lastname, setLastname] = useState();
-  const [phonenumber, setPhonenumber] = useState();
-  const [role, setRole] = useState();
-  const [message, setMessage] = useState();
   const [showPopup, setShowPopup] = useState(false);
 
-  useEffect((e) => {
-    setFirstname(e.target.firstname);
-    setLastname(e.target.lastname);
-    setPhonenumber(e.target.phonenumber);
-    setRole(e.target.role);
-    setMessage(e.target.message);
+  const changeHandler = (e) => {
 
-  }, [])
-
-  const changeHandler = (event) => {
-
+    setNote({
+      ...notes,
+      [e.target.name]: e.target.value
+    })
   };
 
-  const submitHandler = (event) => {
+  const submitHandler = (e) => {
+    e.preventDefault();
     setShowPopup(true);
   };
 
-  const closePopupHandler = (event) => {
-    event.preventDefault();
-    setShowPopup(false);
-    console.log("cancle");
-  };
+  const postHandler = () => {
+    axios
+      .post("http://localhost:3050/notes", notes)
+      .then((res) => console.log(res))
+      .catch((error) => console.log(error))
 
+    setShowPopup(false);
+
+    setNote({
+      ...notes,
+      firstname: '',
+      lastname: '',
+      phonenumber: '',
+      role: '',
+      message: ''
+    })
+  }
+
+  const closePopupHandler = (e) => {
+
+    setNote({
+      ...notes,
+      firstname: '',
+      lastname: '',
+      phonenumber: '',
+      role: '',
+      message: ''
+    })
+    console.log("cancel");
+    setShowPopup(false);
+  };
 
   return (
     <main>
       <div className='form-container'>
         <h1>Control components and working with forms</h1>
         <Form
+          {...notes}
           changeHandler={changeHandler}
           submit={submitHandler}
         />
       </div>
       <section className='view-container'>
         <View
-          firstname={firstname}
-          lastname={lastname}
-          phonenumber={phonenumber}
-          message={message}
-          role={role}
+          {...notes}
         />
       </section>
       <section>
@@ -62,12 +83,8 @@ const App = () => {
       </section>
       <section className='popup-container'>
         {showPopup && <Popup
-          firstname={firstname}
-          lastname={lastname}
-          phonenumber={phonenumber}
-          message={message}
-          role={role}
-          closePopup={closePopupHandler}
+          {...notes}
+          sendInfo={postHandler}
           cancel={closePopupHandler}
         />}
       </section>

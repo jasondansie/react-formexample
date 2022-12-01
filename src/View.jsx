@@ -1,13 +1,13 @@
 import './View.css';
 
-const Inputcheck = (props) => {
+const Inputcheck = ({ firstname, lastname, phonenumber, message, role }) => {
     return (
         <div className='inputcheck-container'>
-            <h3>First name: {props.firstname}</h3>
-            <h3>Last name: {props.lastname}</h3>
-            <h3>Phone Number: {props.phonenumber}</h3>
-            <h3>Message: {props.message}</h3>
-            <h3>Role: {props.roles}</h3>
+            <h3>First name: {firstname}</h3>
+            <h3>Last name: {lastname}</h3>
+            <h3>Phone Number: {phonenumber}</h3>
+            <h3>Message: {message}</h3>
+            <h3>Role: {role}</h3>
         </div>
     )
 }

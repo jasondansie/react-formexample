@@ -1,6 +1,6 @@
 import './Popup.css';
 
-const Popup = ({ firstname, lastname, phonenumber, message, role, closePopupHandler }) => {
+const Popup = ({ firstname, lastname, phonenumber, message, role, cancel, sendInfo }) => {
     return (
         <div className="modal" id="modal">
             <h2>Verify your choice</h2>
@@ -18,8 +18,8 @@ const Popup = ({ firstname, lastname, phonenumber, message, role, closePopupHand
                 </div>
             </div>
             <div className='button-container'>
-                <button className='closePopup' name="closePopup" onClick={closePopupHandler}>Send</button>
-                <button className="cancel" onClick={closePopupHandler}>Cancel</button>
+                <button className='sendInfo' name="sendInfo" onClick={sendInfo}>Send</button>
+                <button className="cancel" onClick={cancel}>Cancel</button>
             </div>
 
 
